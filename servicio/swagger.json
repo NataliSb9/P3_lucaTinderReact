@@ -1,0 +1,171 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Lucatinder API",
+    "description": "API REST to Lucatinder app",
+    "license": {
+      "name": "MIT"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/lucatinder",
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/usuario": {
+      "get": {
+        "description": "Return one user from the Mongo Atlas data base Personas",
+        "summary": "find usuarios by email",
+        "produces": ["application/json"],
+        "parameters": [{
+          "name": "email",
+          "in": "query",
+          "description": "email to find user",
+          "required": "true",
+          "type": "string"
+        }],
+        "responses": {
+          "200": {
+            "description": "Usuario response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/Usuario"
+              }
+            }
+          },
+          "400": {
+            "description": "unexpected error"
+          }
+        }
+
+      },
+      "put": {
+        "summary": "add email of another users inside the array arrLikes or arrDislike",
+        "consumes": "application/json",
+        "produces": "application/json",
+        "parameters": {
+          "name": "body",
+          "in": "body",
+          "description": "email of the candidate who likes you or dislikes you that to be added to arrLikes or arrDislike",
+          "required": "true",
+          "type": "string"
+        },
+        "responses": {
+          "200": {
+            "description": "Actualizado"
+          },
+          "400": {
+            "description": "error"
+          }
+        }
+      }
+    },
+    "/join": {
+      "post": {
+        "summary": "add a new user from register",
+        "consumes": "application/json",
+        "produces": "application/json",
+        "parameters": {
+          "name": "body",
+          "in": "body",
+          "description": "Usuario object that needs to be added to the Personas collection",
+          "required": "true",
+          "type": "string"
+        },
+        "responses": {
+          "200": {
+            "description": "usuario creado",
+            "schema": {
+              "$ref": "#/components/Usuario"
+            }
+          },
+          "400": {
+            "description": "error"
+          }
+        }
+      }
+    },
+    "/conocepersonas": {
+      "get": {
+        "description": "This endpoint returns 10 usuarios according to genre preference of the user",
+        "summary": "return 10 users",
+        "produces": ["application/json"],
+        "parameters": [{
+          "name": "prefgen",
+          "in": "query",
+          "description": "genre preference to find 10 users",
+          "required": "true",
+          "type": "string"
+        }],
+        "responses": {
+          "200": {
+            "description": "Usuarios enviados",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/Usuario"
+              }
+            }
+          },
+          "400": {
+            "description": "unexpected error"
+          }
+        }
+
+      }
+    }
+  },
+  "components": {
+    "Usuario": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "genero": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "pass": {
+          "type": "string"
+        },
+        "age": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "descripcion": {
+          "type": "string"
+        },
+        "gustos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "arrLikes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "disLike": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "prefGen": {
+          "type": "string"
+        },
+        "foto": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
