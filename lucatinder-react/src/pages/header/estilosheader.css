@@ -1,0 +1,63 @@
+.header-component {
+    color: #e91d62;
+    font-weight: 700;
+  }
+  .header-component .h1-img {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .header-component h1 {
+    padding-top: 40px !important;
+    color: #e91d62;
+    text-transform: uppercase;
+    font-size: 4em;
+    font-weight: 700;
+  }
+  .header-component img {
+    margin-top: 15px;
+    height: 85px;
+  }
+  .header-component a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.5em;
+    padding-bottom: 25px !important;
+  }
+  .header-component main {
+    min-height: 100vh;
+  }
+  .header-component header {
+    background-color: black;
+    box-shadow: 0 0 5px #e91d62;
+  }
+  .header-component h1 {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  .header-component nav {
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .header-component nav a {
+    flex-grow: 1;
+    text-align: center;
+    padding: 1em;
+    position: relative;
+  }
+  .header-component nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    transform: scaleX(0);
+    background: #e91d62;
+    transition: 0.7s transform cubic-bezier(0.06, 0.9, 0.28, 1);
+  }
+  .header-component nav a:hover::after {
+    transform: scaleX(1);
+  }/*# sourceMappingURL=header.component.css.map */

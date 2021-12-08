@@ -1,0 +1,13 @@
+.PageNotFound p {
+  background-color: #ad0c0cd7;
+  margin: 2em;
+  font-size: 1.4em;
+  color: aliceblue;
+}
+
+p.PageError{
+  background-color: #aa7878d7;
+  font-size: 6em;
+  color: #000;
+
+}
