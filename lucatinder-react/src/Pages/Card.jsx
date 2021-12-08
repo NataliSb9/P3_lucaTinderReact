@@ -45,8 +45,8 @@ class Card extends React.Component {
   // ---------------------------------
   render() {
     return (
-      <div>
-        <p>holaa</p>
+      <div className="container">
+        <p className="btn">holaa</p>
         <button  onClick={() => this.addLikeOrDislike(true)}>Like</button>
         <button onClick={() => this.addLikeOrDislike(false)}>DisLike</button>
       </div>
