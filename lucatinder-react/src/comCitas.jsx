@@ -40,8 +40,21 @@ class ComponenteCitas extends React.Component {
 
     render() {
         return <div>
-            <p>hola</p>
-            <p>{}</p>
+            {this.state.candidatos.length > 0 ? (
+				this.state.candidatos.map((candidato) =>(<tr key={candidato._id}>
+                  
+                    <td>{candidato.name}</td>
+                    <td>{candidato.prefGen}</td>
+                    <td>{candidato.email}</td>
+    
+                </tr>
+            ))
+        ) : (
+            <tr>
+               
+            </tr>
+        )}
+								
         </div>
     }
 }
