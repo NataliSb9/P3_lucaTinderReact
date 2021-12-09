@@ -56,10 +56,10 @@ function Card(props) {
                 backgroundImage: `url(${props.usuario.foto})`,
               }}
             >
-              <h2 className="name">{usuario.name}</h2>
+              <h2 className="name">{props.usuario.name}</h2>
             </div>
             <div className="div-descripcion">
-              <h3 className="descripcion">{usuario.descripcion}</h3>
+              <h3 className="descripcion">{props.usuario.descripcion}</h3>
             </div>
             <div className="div-buttons">
               <div className="btn btn_like_div" id="btn_like_div">
@@ -85,18 +85,18 @@ function Card(props) {
           <div class="tp-box__back">
             <div class="nombre-edad-sex">
               <div class="nombre-edad">
-                <h2 class="name">{usuario.name}</h2>
-                <h3 class="edad">Edad {usuario.age}</h3>
+                <h2 class="name">{props.usuario.name}</h2>
+                <h3 class="edad">Edad {props.usuario.age}</h3>
               </div>
               <div class="sex"></div>
             </div>
             <div class="correo cont-corr-tel">
               <div class="back-logo logo-correo"></div>
-              <h3 class="inner_h3">{usuario.email}</h3>
+              <h3 class="inner_h3">{props.usuario.email}</h3>
             </div>
             <div class="gustos">
               
-            {usuario.gustos.map((gusto) => ( 
+            {props.usuario.gustos.map((gusto) => ( 
               <h4 class="gusto">{gusto}</h4>
              ))}  
             </div>
