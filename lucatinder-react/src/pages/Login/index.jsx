@@ -19,6 +19,7 @@ class Login extends React.Component {
 
   loginButton() {
     window.localStorage.setItem('usuarioActual', this.state.usuarioActual);
+    window.location.href = './home';
   }
 
   render() {

@@ -1,11 +1,6 @@
-.Home p {
-    background-color: #6b74ec;
-    margin: 2em;
-    font-size: 1.4em;
-    color: aliceblue;
-}
+
 .sec-cards {
-  display: flex;
+  display: flex ;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;

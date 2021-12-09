@@ -3,7 +3,8 @@ import axios from "axios";
 import Header from "../header/index";
 import Footer from "../Footer/index";
 import Card from "../Card";
-let users = [];
+import "./estilosmatches.css"
+//let users = [];
 
 
 
@@ -37,6 +38,7 @@ class Matches extends React.Component {
 			lista: [],
       
     };
+    this.matcheados = [];
   }
 
   componentDidMount() {
@@ -56,7 +58,7 @@ class Matches extends React.Component {
              this.setState({ candidatos });
              for( let k=0;k<likeados.arrLikes.length;k++){
               if (email=== likeados.arrLikes[k]){
-             users.push(likeados)
+             this.matcheados.push(likeados)
              }} 
             });
 
@@ -74,7 +76,7 @@ class Matches extends React.Component {
         <Header />
         <div className="centrator">
           <div className="matchesContainer container">
-            {users.map((user) => (
+            {this.matcheados.map((user) => (
               <Card papa={"like"} usuario={user} key={user.email}/>
             ))}
           </div>

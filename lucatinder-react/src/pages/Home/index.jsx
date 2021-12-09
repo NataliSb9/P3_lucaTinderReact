@@ -3,6 +3,7 @@ import axios from "axios";
 import Card from "../Card";
 import Header from "../header";
 import Footer from "../Footer";
+import "./estiloshome.css"
 
 
 class Home extends React.Component {

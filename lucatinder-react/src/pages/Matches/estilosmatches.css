@@ -1,5 +1,8 @@
-.likeContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.matchesContainer {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  padding-bottom: 50px !important;
+  min-height: 80vh !important;
 }

@@ -52,7 +52,7 @@ function Card(props) {
             </div>
             <div className="div-buttons">
               <div className={`btn btn_like_div ${props.papa}`} id="btn_like_div">
-                <span title="like_link" className="btn-inner" id="like_link" onClick={addLikeOrDislike(false, props.usuario.email)}>
+                <span title="dislike" className="btn-inner" id="like_link" onClick={() => addLikeOrDislike(false, props.usuario.email)}>
                   <div className="btn_imagen_inner b_dislike" alt=""></div>
                 </span>
               </div>
@@ -62,7 +62,7 @@ function Card(props) {
                 </span>
               </div>
               <div className={`btn btn_dislike_div ${props.papa}`} id="btn_dislike_div" >
-                <span title="dislike_link" id="dislike_link" onClick={addLikeOrDislike(true, props.usuario.email)}>
+                <span title="like" id="dislike_link" onClick={() => addLikeOrDislike(true, props.usuario.email)}>
                   <div className="btn_imagen_inner b_like" alt=""></div>
                 </span>
               </div>

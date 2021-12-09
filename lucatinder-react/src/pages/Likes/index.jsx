@@ -3,7 +3,9 @@ import axios from "axios";
 import Header from "../header/index";
 import Footer from "../Footer/index";
 import Card from "../Card";
-let users = [];
+import "./estiloslikes.css"
+
+
 
 
 
@@ -37,6 +39,7 @@ class ListaLikes extends React.Component {
 			lista: [],
       
     };
+    this.usuario = [];
   }
 
   componentDidMount() {
@@ -53,12 +56,13 @@ class ListaLikes extends React.Component {
 
             for (let i= 0;i<this.state.lista.length;i++){
               axios.get(`http://localhost:3000/lucatinder/usuario?email=${this.state.lista[i]}`).then((res) => {
+                console.log(this.state.lista[i])
               const candidatos = res.data;
              let likeados=res.data[0];
-             users.push(likeados)
-              this.setState({ likeados })
+             this.usuario.push(likeados)
+              //this.setState({ likeados })
               this.setState({ candidatos });
-              console.log(this.state.candidatos,this.state.likeados); 
+              console.log("linea 62 " + this.state.likeados); 
             });
 
           }
@@ -74,8 +78,8 @@ class ListaLikes extends React.Component {
       <section className="Likes">
         <Header />
         <div className="centrator">
-          <div className="likeContainer container">
-            {users.map((user) => (
+          <div className="likeContainer container d-flex">
+            {this.usuario.map((user) => (
               <Card papa={"like"} usuario={user} key={user.email}/>
             ))}
           </div>

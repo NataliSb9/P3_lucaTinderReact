@@ -60,6 +60,7 @@
   }
   .tp-box__front .img-nombre-edad .name {
     font-size: 2em;
+    text-align: right;
     text-shadow: 2px 2px #c1165c;
     margin: 0px 12px 6px 0px;
     color: #fff;
@@ -211,6 +212,7 @@
   }
   
   .inner_h3 {
+    font-size: 16px !important;
     margin-left: 8px;
   }
   
