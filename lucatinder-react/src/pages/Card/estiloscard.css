@@ -14,34 +14,36 @@
     width: 300px;
     height: 450px;
     margin: 20px;
-    transform-style: preserve-3d;
-    transform: transform 1s;
+    color: #c1165c;
+   /* transform-style: preserve-3d;
+    transform: transform 1s; */
   }
   
   .tp-box__side {
     width: 100%;
     height: 100%;
     position: absolute;
-    -webkit-backface-visibility: hidden;
+    
+   /* -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    color: #c1165c;
+   
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none;
+    user-select: none;*/
   }
   
   .tp-box__front {
     background: black;
     border-radius: 8px;
-    transform: rotateY(0deg);
+   /* transform: rotateY(0deg);*/
   }
   
   .tp-box__back {
     background: black;
     border-radius: 8px;
-    transform: rotateY(-180deg);
+  /*  transform: rotateY(-180deg);*/
   }
   
   .tp-box__front .img-nombre-edad {
@@ -158,19 +160,8 @@
     font-size: 1.5em;
     font-weight: bold;
   }
-  .tp-box__back .telefono {
-    height: 65px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .tp-box__back .telefono h3 {
-    font-size: 1.5em;
-    font-weight: bold;
-  }
   .tp-box__back .gustos {
-    height: 170px;
+    height: 235px;
     width: 300px;
     display: flex;
     flex-direction: row;

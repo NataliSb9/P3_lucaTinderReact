@@ -1,5 +1,5 @@
 import React from "react";
-import "./estiloslikes.css";
+import "./estilosmatches.css";
 import Header from "../header/index";
 import Footer from "../Footer/index";
 import Card from "../Card";
@@ -9,9 +9,9 @@ import Card from "../Card";
 
 let users = [];
 
-function Likes () {
+function Matches () {
     return (
-      <section className="Likes">
+      <section className="Matches">
         <Header />
         <div className="centrator">
           <div className="likeContainer container">
@@ -25,4 +25,4 @@ function Likes () {
     );
   }
 
-export default Likes;
+export default Matches;
