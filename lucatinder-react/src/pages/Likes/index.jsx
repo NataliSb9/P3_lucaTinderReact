@@ -1,6 +1,7 @@
-import React from "react";
-import "./estiloslikes.css";
-import axios from "axios";
+export default ListaLikes;
+import Header from "../header/index";
+import Footer from "../Footer/index";
+import Card from "../Card";
 
 export class Usuario {
   constructor( id,name,genero,email,age,descripcion,gustos,arrLikes,arrDislikes,prefGen,foto,) {
@@ -58,49 +59,29 @@ class ListaLikes extends React.Component {
     });
     
   }
+}
 
 
-  render() {
-    if ()
+/* FLATA LLENAR EL ARRAY USERS */
+
+let users = [];
+
+function Likes () {
     return (
-      <section className="Card container">
-        <div className="row sec-cards">
-          {this.state.candidatos.length > 0 ? (
-            this.state.likeados.map((candidato) => (
-              <div className="tp-box" key={candidato._id}>
-                <div className="tp-box__side tp-box__front ">
-                  <div
-                    className="img-nombre-edad"
-                    style={{
-                      backgroundImage: `url(${candidato.foto})`,
-                    }}
-                  >
-                    <h2 className="name">{candidato.name}</h2>
-                  </div>
-                  <div className="div-descripcion">
-                    <h3 className="descripcion">{candidato.descripcion}</h3>
-                  </div>
-                  <div className="div-buttons">
-                    
-                    <div className="btn flip_front-div">
-                      <div title="flip_front" id="flip_front">
-                        <div className="btn_imagen_inner b_front" alt=""></div>
-                      </div>
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-            ))
-          ) : (
-            <div>
-              <p>--- No se pueden cargar los usuarios</p>
-            </div>
-          )}
+      <section className="Likes">
+        <Header />
+        <div className="centrator">
+          <div className="likeContainer container">
+            {users.map((user) => (
+              <Card user={user}/>
+            ))}
+          </div>
         </div>
+        <Footer />
       </section>
     );
   }
-}
 
-export default ListaLikes;
+
+
+export default Likes;

@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import "./estiloshome.css";
+
 
 class Home extends React.Component {
   constructor(props) {
