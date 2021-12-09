@@ -261,3 +261,5 @@
   .b_chat:hover {
     background: url(../../assets/imgs/comment-solid.svg);
   }/*# sourceMappingURL=user-card.component.css.map */
+
+  .like,.dislike,.match {display: none !important; }

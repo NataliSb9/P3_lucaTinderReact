@@ -1,45 +1,34 @@
 import React, { useState } from "react";
 import "./estiloscard.css";
 import ReactCardFlip from "react-card-flip";
+import axios from "axios";
 
-let usuario = {
-  id: "1",
-  name: "Milja Aho",
-  genero: "female",
-  email: "milja.aho@example.com",
-  pass: "sabrina1",
-  age: 66,
-  descripcion: "¿No tendremos un amigo en común que pueda presentarnos?",
-  gustos: [
-    "Netflix",
-    "Youtube",
-    "Andorra",
-    "Cine",
-    "Té",
-    "Filetes",
-    "Pan",
-    "Chocololate",
-  ],
-  arrLikes: [
-    "hiba.truong@example.com",
-    "liva.jorgensen@example.com",
-    "afet.bakircioglu@example.com",
-    "bernice.stevens@example.com",
-  ],
-  arrDislike: [
-    "stella.roussel@example.com",
-    "lindaura.duarte@example.com",
-    "stella.roussel@example.com",
-  ],
-  prefGen: "female",
-  foto: "https://randomuser.me/api/portraits/women/36.jpg",
-};
+
+function addLikeOrDislike(esLike, emailCandidato) {
+  const userMatch = {
+    email: emailCandidato,
+    myEmail: localStorage.getItem("usuarioActual"),
+    esLike: esLike,
+  };
+
+  axios
+    .put("http://localhost:3000/lucatinder/usuario", userMatch)
+    .then((resp) => {})
+
+    .catch((error) => {
+      console.error("Ha habido un error", error);
+    });
+}
+
+
 
 function Card(props) {
   const [isFlipped, setIsFlipped] = useState(false);
   const handleClick = () => {
     setIsFlipped(!isFlipped);
   };
+
+  
 
   return (
     <section className="Card">
@@ -48,7 +37,7 @@ function Card(props) {
         isFlipped={isFlipped}
         flipDirection="vertical"
       >
-        <div class="tp-box">
+        <div className="tp-box">
           <div className="tp-box__front">
             <div
               className="img-nombre-edad"
@@ -62,8 +51,8 @@ function Card(props) {
               <h3 className="descripcion">{props.usuario.descripcion}</h3>
             </div>
             <div className="div-buttons">
-              <div className="btn btn_like_div" id="btn_like_div">
-                <span title="like_link" className="btn-inner" id="like_link">
+              <div className={`btn btn_like_div ${props.papa}`} id="btn_like_div">
+                <span title="like_link" className="btn-inner" id="like_link" onClick={addLikeOrDislike(false, props.usuario.email)}>
                   <div className="btn_imagen_inner b_dislike" alt=""></div>
                 </span>
               </div>
@@ -72,8 +61,8 @@ function Card(props) {
                   <div className="btn_imagen_inner b_front" alt=""></div>
                 </span>
               </div>
-              <div className="btn btn_dislike_div" id="btn_dislike_div">
-                <span title="dislike_link" id="dislike_link">
+              <div className={`btn btn_dislike_div ${props.papa}`} id="btn_dislike_div" >
+                <span title="dislike_link" id="dislike_link" onClick={addLikeOrDislike(true, props.usuario.email)}>
                   <div className="btn_imagen_inner b_like" alt=""></div>
                 </span>
               </div>
@@ -81,39 +70,39 @@ function Card(props) {
           </div>
         </div>
 
-        <div class="tp-box">
-          <div class="tp-box__back">
-            <div class="nombre-edad-sex">
-              <div class="nombre-edad">
-                <h2 class="name">{props.usuario.name}</h2>
-                <h3 class="edad">Edad {props.usuario.age}</h3>
+        <div className="tp-box">
+          <div className="tp-box__back">
+            <div className="nombre-edad-sex">
+              <div className="nombre-edad">
+                <h2 className="name">{props.usuario.name}</h2>
+                <h3 className="edad">Edad {props.usuario.age}</h3>
               </div>
-              <div class="sex"></div>
+              <div className="sex"></div>
             </div>
-            <div class="correo cont-corr-tel">
-              <div class="back-logo logo-correo"></div>
-              <h3 class="inner_h3">{props.usuario.email}</h3>
+            <div className="correo cont-corr-tel">
+              <div className="back-logo logo-correo"></div>
+              <h3 className="inner_h3">{props.usuario.email}</h3>
             </div>
-            <div class="gustos">
+            <div className="gustos">
               
             {props.usuario.gustos.map((gusto) => ( 
-              <h4 class="gusto">{gusto}</h4>
+              <h4 key={props.usuario.email+gusto+1} className="gusto">{gusto}</h4>
              ))}  
             </div>
-            <div class="div-buttons">
-              <div class="btn flip_back_div">
+            <div className="div-buttons">
+              <div className="btn flip_back_div">
                 <span
                   title="flip_back"
-                  class="flip_back_link"
+                  className="flip_back_link"
                   id="flip_back_link"
                   onClick={handleClick}
                 >
-                  <div class="btn_imagen_inner b_back" alt=""></div>
+                  <div className="btn_imagen_inner b_back" alt=""></div>
                 </span>
               </div>
-              <div class="btn btn_chat_div" id="btn_chat_div">
-                <span title="chat" class="chat_btn_link" class="chat_btn_link">
-                  <div class="btn_imagen_inner b_chat" alt=""></div>
+              <div className="btn btn_chat_div" id="btn_chat_div">
+                <span title="chat" className="chat_btn_link">
+                  <div className="btn_imagen_inner b_chat" alt=""></div>
                 </span>
               </div>
             </div>
