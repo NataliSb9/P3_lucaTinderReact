@@ -10,11 +10,22 @@ class Home extends React.Component {
           response: '',
           prefGen:'',
           candidatos: [],
+          email  : "react14",
+          myEmail: "milja.aho@example.com",
+          esLike : true,
       }
   }
+  // ---------------------------------
+
+  // MODELO
+
+  // ---------------------------------
+
+
   componentDidMount(){
-    const email = "milja.aho@example.com"
+    const email = localStorage.getItem('usuarioActual');
     axios.get(`http://localhost:3000/lucatinder/usuario?email=${email}`).then((res) => {
+        console.log(email)
         const prefGen = res.data[0].prefGen;
         this.setState({prefGen})
         console.log(this.state.prefGen)
@@ -27,7 +38,38 @@ class Home extends React.Component {
   
         })   
       })
-  };
+    };
+
+    addLikeOrDislike(esLike,emailCandidato) {
+        const userMatch = {
+          email  : emailCandidato,
+          myEmail: localStorage.getItem('usuarioActual'),
+          esLike : esLike,
+        };
+        console.log("desde la función" + userMatch.email)
+        console.log(emailCandidato)
+        console.log(userMatch);
+        axios
+          .put("http://localhost:3000/lucatinder/usuario", userMatch)
+          .then((resp) => {
+    
+            // alert('Se ha guardado el libro [' + this.state.name + ']' + '\nActualiza la lista para verlo');
+    
+            // Puedo navegar a Lista. Hay que retocarlo
+    
+            // useNavigate("http://localhost:3000/list-books");
+    
+            // history.push('/list-books');
+    
+        })
+    
+          .catch((error) => {
+            // this.setState({ errorMessage: error.message });
+            console.error("Ha habido un error", error);
+    
+        });
+    
+    }
   
   render() {
     return  (
@@ -48,7 +90,8 @@ class Home extends React.Component {
                     <h3 className="descripcion">{candidato.descripcion}</h3>
                 </div>
                 <div className="div-buttons">
-                    <div className="btn btn_like_div" id="btn_like_div">
+                    <div className="btn btn_like_div" id="btn_like_div" onClick={() => this.addLikeOrDislike(true,candidato.email)}>
+                        {console.log(candidato.email)}
                         <div title="like_link" className="btn-inner" id="like_link">
                             <div className="btn_imagen_inner b_dislike" alt=""></div>
                         </div>
@@ -58,7 +101,7 @@ class Home extends React.Component {
                             <div className="btn_imagen_inner b_front" alt=""></div>
                         </div>
                     </div>
-                    <div className="btn btn_dislike_div" id="btn_dislike_div">
+                    <div className="btn btn_dislike_div" id="btn_dislike_div" onClick={() => this.addLikeOrDislike(false)}>
                         <div title="dislike_link" id="dislike_link">
                             <div className="btn_imagen_inner b_like" alt=""></div>
                         </div>
