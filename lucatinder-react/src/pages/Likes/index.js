@@ -1,6 +1,6 @@
 import React from "react";
 import "./estiloslikes.css";
-import Card from "../Card";
+
 
 let user1 = {
   name: "Liva Jørgensen",
@@ -45,24 +45,24 @@ const Likes = () => (
                 </div>
                 <div className="div-buttons">
                   <div className="btn btn_like_div" id="btn_like_div">
-                    <a
-                      href=""
+                    <span
+              
                       title="like_link"
                       className="btn-inner"
                       id="like_link"
                     >
                       <div className="btn_imagen_inner b_dislike" alt=""></div>
-                    </a>
+                    </span>
                   </div>
                   <div className="btn flip_front-div">
-                    <a title="flip_front" id="flip_front">
+                    <span title="flip_front" id="flip_front">
                       <div className="btn_imagen_inner b_front" alt=""></div>
-                    </a>
+                    </span>
                   </div>
                   <div className="btn btn_dislike_div" id="btn_dislike_div">
-                    <a href="" title="dislike_link" id="dislike_link">
+                    <span title="dislike_link" id="dislike_link">
                       <div className="btn_imagen_inner b_like" alt=""></div>
-                    </a>
+                    </span>
                   </div>
                 </div>
               </div>

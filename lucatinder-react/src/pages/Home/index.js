@@ -37,7 +37,7 @@ class Home extends React.Component {
         this.state.candidatos.length > 0 ? (this.state.candidatos.map((candidato) =>
 
         (
-        <div class="tp-box ">
+        <div className="tp-box" key = {candidato._id}>
             <div className="tp-box__side tp-box__front ">
                 <div className="img-nombre-edad" style={{
               backgroundImage: `url(${candidato.foto})`,

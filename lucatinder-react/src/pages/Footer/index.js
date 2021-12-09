@@ -21,10 +21,10 @@ const Footer = () => (
     <span className="border-shape"></span>
     <div className="bottom_content">
     <section>
-    <a href=""><i className="fa fa-facebook"></i></a>
-    <a href=""><i className="fa fa-instagram"></i></a>
-    <a href=""><i className="fa fa-twitter"></i></a>
-    <a href=""><i className="fa fa-telegram"></i></a>
+    <span><i className="fa fa-facebook"></i></span>
+    <span><i className="fa fa-instagram"></i></span>
+    <span><i className="fa fa-twitter"></i></span>
+    <span><i className="fa fa-telegram"></i></span>
     </section>
     </div>
     <div className="copyright">

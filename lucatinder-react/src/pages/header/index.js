@@ -6,7 +6,7 @@ import {
   //Navigate
 } from "react-router-dom";
 const Header = () => (
-  <section classNameName="Header">
+  <section className="Header">
     <div className="header-component">
       <header>
         <div className="h1-img">
