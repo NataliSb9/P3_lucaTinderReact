@@ -20,7 +20,7 @@ function addLikeOrDislike(esLike, emailCandidato) {
     });
 }
 
-
+ 
 
 function Card(props) {
   const [isFlipped, setIsFlipped] = useState(false);
