@@ -40,8 +40,8 @@ class ListaLikes extends React.Component {
   }
 
   componentDidMount() {
-    //const email = localStorage.getItem("usuarioActual");
-    const email= "milja.aho@example.com";
+    const email = localStorage.getItem("usuarioActual");
+    //const email= "milja.aho@example.com";
     axios.get(`http://localhost:3000/lucatinder/usuario?email=${email}`).then((res) => {
       console.log(res.data[0])
       //this.state.lista=res.data[0].arrLikes;

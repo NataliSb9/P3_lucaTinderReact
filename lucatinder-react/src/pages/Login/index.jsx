@@ -31,9 +31,9 @@ class Login extends React.Component {
 
             <p className="text-muted">¡El lugar indicado si no te comes una rosca!</p>
 
-            <input required className="btn-tin" placeholder="Usuario" type="text" />
+            <input required className="btn-tin" placeholder="Usuario" type="text" onChange={this.handleChange}/>
 
-            <input required className="btn-tin" placeholder="Contraseña" type="password"  onChange={this.handleChange}/>
+            <input required className="btn-tin" placeholder="Contraseña" type="password"  />
 
             <button className="btn-tin__submit" onClick={() => this.loginButton()}>Entrar</button>
           </div>
