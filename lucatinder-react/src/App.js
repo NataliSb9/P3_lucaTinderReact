@@ -17,6 +17,7 @@ import Footer from './pages/Footer';
 //import 'font-awesome/css/font-awesome.min.css';
 import Matches from './pages/Matches';
 import DisLikes from './pages/Dislikes';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <main className="Box">
           <Routes >
             {/*<Route exact path="/" component={Home} />   */}
+            <Route exact path="/login" element={<Login />} />          
             <Route exact path="/" element={<Home />} />          
             <Route exact path="/likes" element={<Likes />} />
             <Route exact path="/dislikes" element={<DisLikes />} />
