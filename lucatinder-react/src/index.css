@@ -12,10 +12,7 @@ code {
     monospace;
 }
 body {
-  background: url("https://wallpapercave.com/wp/pdJrhtN.jpg") center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  background: linear-gradient(to right, #2e336a, #c1165c);
   height: 100vh;
   margin: 0;
   padding: 0;

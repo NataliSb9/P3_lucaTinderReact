@@ -27,8 +27,8 @@ function App() {
         <main className="Box">
           <Routes>
             {/*<Route exact path="/" component={Home} />   */}
-            <Route exact path="/login" element={<Login />} />
-            <Route exact path="/" element={<Home />} />
+            <Route exact path="/" element={<Login />} />
+            <Route exact path="/home" element={<Home />} />
             <Route exact path="/likes" element={<Likes />} />
             <Route exact path="/dislikes" element={<DisLikes />} />
             <Route exact path="/matches" element={<Matches />} />
@@ -37,7 +37,6 @@ function App() {
           </Routes>
         </main>
       </div>
-      {<Footer />}
     </Router>
   );
 }

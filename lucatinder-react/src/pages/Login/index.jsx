@@ -18,7 +18,6 @@ class Login extends React.Component {
   
 
   loginButton() {
-    console.log('hola')
     window.localStorage.setItem('usuarioActual', this.state.usuarioActual);
   }
 
