@@ -12,8 +12,6 @@ import {
 import Home from "./pages/Home";
 import Likes from "./pages/Likes";
 import PageNotFound from "./pages/PageNotFound";
-import Header from "./pages/header";
-import Footer from "./pages/Footer";
 //import 'font-awesome/css/font-awesome.min.css';
 import Matches from "./pages/Matches";
 import DisLikes from "./pages/Dislikes";
